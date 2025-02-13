@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <style>
         body {
             background-color: rgb(10, 25, 47);
-            font-family: 'Times New Roman', serif;
+            font-family: 'Source Sans Pro', sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -25,30 +26,48 @@
             box-shadow: rgba(44, 42, 54, 0.45) 0px 52px 54px;
             border-radius: 8px;
             padding: 65px 52px;
-            max-width: 600px;
-            text-align: center;
+            max-width: 800px;
             color: white;
         }
-        h1 {
-            text-transform: uppercase;
+        h1, h2 {
             font-family: Montserrat, sans-serif;
-            letter-spacing: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+        h1 {
+            letter-spacing: 8px;
             font-size: 34px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: white;
+            margin: 5px auto 0;
         }
         img.profile {
             width: 6rem;
             border-radius: 50%;
-            margin: 30px 0;
+            display: block;
+            margin: 30px auto;
         }
         p {
-            font-family: 'Source Sans Pro', sans-serif;
             font-size: 17px;
             line-height: 1.8;
+            text-align: lefts;
         }
         .social-icons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             margin: 30px 0;
         }
@@ -61,15 +80,50 @@
             border-radius: 50%;
             background: white;
             text-decoration: none;
+            font-size: 20px;
+            color: rgb(10, 25, 47);
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
         }
         .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
             margin-top: 50px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .section h2 {
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 15px;
+        .section img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .section div {
+            flex: 1;
+        }
+        .about {
+            flex-direction: row;
+        }
+        .project {
+            flex-direction: row-reverse;
+        }
+        .blog {
+            flex-direction: row;
+        }
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section img {
+                margin-bottom: 10px;
+            }
+            p {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -78,27 +132,42 @@
         <div class="card">
             <h1>Sentry</h1>
             <img src="assets/images/image03.jpg" alt="Profile" class="profile">
-            <p>Hi, I'm Mohammad</p>
-            <hr>
-            <p>Computer Engineering Student | IT Professional | Cybersecurity Analyst</p>
+            <p style="display: block; text-align: center;">Hi, I'm Mohammad</p>
+            <p style="display: block; text-align: center;">Computer Engineering Student | IT Professional | Cybersecurity Analyst</p>
             <div class="social-icons">
-                <a href="mailto:user@domain.tld">📧</a>
-                <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/">🔗</a>
-                <a href="https://github.com/CyOwl-V">🐱</a>
-                <a href="https://www.instagram.com/cyowl.v/">📷</a>
+                <a href="mailto:mohammadtayeb.v@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+                <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/CyOwl-V" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.instagram.com/cyowl.v/" title="Instagram"><i class="bi bi-instagram"></i></a>
             </div>
-            <div class="section">
-                <h2>About Me</h2>
-                <p>Cybersecurity student with an IT background. Passionate about securing digital environments.</p>
+            <div class="section about">
+                <div>
+                    <h2>About Me</h2>
+                    <p>As a cybersecurity student with a strong IT background, I am passionate about securing digital environments through innovative solutions.</p>
+                </div>
+                <img src="assets/images/about.jpg" alt="About Me"> 
             </div>
-            <div class="section">
-                <h2>Projects</h2>
-                <p>Explore my projects and see how I contribute to cybersecurity.</p>
+            <div class="section project">
+                <img src="assets/images/projects.jpg" alt="Projects">
+                <div>
+                    <h2>Projects</h2>
+                    <p>Explore my projects where I apply cybersecurity principles to real-world challenges, enhancing digital security and defense mechanisms.</p>
+                </div>
             </div>
-            <div class="section">
-                <h2>Blog</h2>
-                <p>Sharing insights, tutorials, and experiences in cybersecurity.</p>
+            <div class="section blog">
+                <div>
+                    <h2>Blog</h2>
+                    <p>Join me as I share insights, tutorials, and experiences in cybersecurity, helping others stay informed and protected in the digital space.</p>
+                </div>
+                <img src="assets/images/blog.jpg" alt="Blog">   
             </div>
+            <div class="social-icons">
+                <a href="mailto:mohammadtayeb.v@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+                <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/CyOwl-V" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.instagram.com/cyowl.v/" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+            <p style="display: block; text-align: center;">&copy; 2024 CyOwl. All rights reserved.</p>
         </div>
     </div>
 </body>
