@@ -1,0 +1,286 @@
+:root {
+    --primary-bg: rgb(10, 25, 47);
+    --card-bg: rgba(44, 42, 54, 0.8);
+    --text-color: rgb(228, 226, 226);
+    --accent-color: #50C878;
+    --social-icon-bg: rgb(212, 211, 211);
+    --social-icon-color: rgb(10, 25, 47);
+}
+
+body {
+    background-color: var(--primary-bg);
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container, .hidden-section {
+    display: none; /* Hide all sections initially */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.active {
+    display: flex !important; /* Show active section */
+}
+
+.card {
+    position: relative; 
+    background-color: var(--card-bg);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: rgba(44, 42, 54, 0.45) 0px 52px 54px;
+    border-radius: 3px;
+    padding: 65px 52px;
+    max-width: 600px;
+    color: var(--text-color);
+}
+
+h1, h2 {
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+h1 {
+    letter-spacing: 8px;
+    font-size: clamp(24px, 5vw, 34px); /* Responsive font size */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.name {
+    font-family: nunito, sans-serif;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.name::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    margin: 10px auto 0;
+}
+
+img.profile {
+    width: 6rem;
+    border-radius: 50%;
+    display: block;
+    margin: 30px auto;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--social-icon-bg);
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--social-icon-color);
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.social-icons-bot {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.social-icons-bot a {
+    font-size: 18px;
+    color: rgb(196, 196, 196);
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+
+.social-icons-bot a:hover {
+    transform: scale(1.1);
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hid-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.section img {
+    width: 300px;
+    height: auto;
+    border-radius: 0px;
+}
+
+.section div {
+    flex: 1;
+}
+
+
+.pic {
+    flex: 60%;
+    text-align: center;
+}
+
+.txt {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: left;
+    margin-left: 10px;
+    width: 260px;
+    height: auto;
+}
+
+.hid-img {
+    width: 500px; /* Set a fixed width */
+    height: auto; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto 20px; /* Center the image and add spacing below */
+}
+
+/* Desktop View Layout */
+.about, .blog {
+    flex-direction: row; /* Image on right */
+}
+
+.project {
+    flex-direction: row; /* Image on left */
+    text-align: left;
+}
+
+/* Hidden Sections */
+.hidden-section {
+    background: rgba(10, 25, 47, 0.9);
+    border-radius: 1px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+.TL::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    margin: 25px 5px 0 0;
+    
+}
+
+
+
+/* Buttons */
+.btn {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px auto;
+    background: rgba(255, 255, 255, 0);
+    color: rgb(196, 196, 196);
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid rgb(196, 196, 196);
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    transition: 0.3s ease;
+    border-radius: 2px; /* Sharp corners */
+}
+
+.btn:hover {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.back-button-container {
+    position: absolute; /* Position the button absolutely within the card */
+    top: 20px; /* Adjust top spacing */
+    left: 20px; /* Adjust left spacing */
+}
+
+.btn-back {
+    position: absolute; /* Position the button absolutely within the card */
+    top: 20px; /* Adjust top spacing */
+    left: 50px; /* Adjust left spacing */
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(196, 196, 196);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 2px;
+    padding: 10px 20px;
+}
+
+.btn-back:hover {
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Mobile View - Consistent Order */
+@media (max-width: 768px) {
+    .section {
+        text-align: center;
+    }
+
+    .section img {
+        margin-bottom: 10px;
+    }
+
+    .about, .blog {
+        flex-direction: column-reverse;
+    }
+
+    .project {
+        flex-direction: column;
+    }
+
+    p {
+        text-align: left;
+    }
+}
