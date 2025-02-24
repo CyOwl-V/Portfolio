@@ -4,278 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentry</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <style>
-        body {
-            background-color: rgb(10, 25, 47);
-            font-family: 'Source Sans Pro', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .container, .hidden-section {
-
-            display: none; /* Hide all sections initially */
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-
-           
-
-        }
-
-        .active {
-
-            display: flex !important; /* Show active section */
-
-        }
-
-        .card {
-            background-color: rgba(44, 42, 54, 0.8);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            box-shadow: rgba(44, 42, 54, 0.45) 0px 52px 54px;
-            border-radius: 3px;
-            padding: 65px 52px;
-            max-width: 600px;
-            color: rgb(228, 226, 226);
-
-            
-        }
-        h1, h2 {
-            font-family: Montserrat, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: normal;
-        }
-        h1 {
-            letter-spacing: 8px;
-            font-size: 34px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        .name {
-            font-family: nunito, sans-serif;
-            font-size: 14px;
-            display: block;
-            text-align: center;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-
-        }
-        
-        .name::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: white;
-            margin: 10px auto 0;
-        }
-            
-        img.profile {
-            width: 6rem;
-            border-radius: 50%;
-            display: block;
-            margin: 30px auto;
-        }
-        p {
-            font-size: 17px;
-            line-height: 1.8;
-            text-align: lefts;
-        }
-        
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgb(212, 211, 211);
-            text-decoration: none;
-            font-size: 20px;
-            color: rgb(10, 25, 47);
-            transition: transform 0.3s;
-        }
-        .social-icons a:hover {
-            transform: scale(1.1);
-        }
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 30px 0;
-        }
-
-        .social-icons-bot {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 30px 0;
-        }
-        .social-icons-bot a {
-            font-size: 18px;
-            color: rgb(196, 196, 196);
-            transition: transform 0.3s;
-            text-decoration: none;
-        }
-        .social-icons-bot a:hover {
-            transform: scale(1.1);
-        }
-
-        .section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
-            margin-top: 50px;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .hid-sec {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: left;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .section img {
-            width: 300px;
-            height: auto;
-            border-radius: 0px;
-        }
-
-        .section div {
-            flex: 1;
-        }
-        .hr {
-            border-color: aqua;
-
-        }
-
-        .pic {
-        
-            flex: 60%;
-            text-align: center;
-
-
-        }
-        .txt {
-            font-family: 'Source Sans Pro', sans-serif;
-            text-align: left;
-            margin-left: 10PX;
-            width: 260px;
-            height: auto;
-            
-        }
-
-        .hid-img {
-            width: 500px;
-            height: auto;
-            align-items: center;
-        }
-
-        /* Desktop View Layout */
-        .about, .blog {
-            flex-direction: row; /* Image on right */
-        }
-
-        .project {
-            flex-direction: row; /* Image on left */
-            text-align: left ;
-        }
-         /* Hidden Sections */
-
-        .hidden-section {
-
-            background: rgba(10, 25, 47, 0.9);
-            border-radius: 1px;
-            margin-top: 20px;
-            text-align: center;
-            width: 100%;
-
-        }
-   
-
-        /* Buttons */
-        .btn {
-            display: block;
-            padding: 10px 20px;
-            margin: 10px auto;
-            background:rgba(255, 255, 255, 0);
-            color: rgb(196, 196, 196);
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid rgb(196, 196, 196);
-            text-align: center;
-            cursor: pointer;
-            display: flex;
-            transition: 0.3s ease;
-            border-radius: 2px; /* Sharp corners */
-        }
-        .btn:hover {
-            border: 2px solid #50C878;
-            color:#50C878 ;
-            
-        }
-
-        .btn-back {
-            background: rgba(255, 255, 255, 0);
-            border: 2px solid rgb(255, 255, 255);
-            
-          
-        }
-        .btn-back:hover {
-            border: 2px solid #50C878;
-            color:#50C878 ;
-
-        }
-
-
-        /* Mobile View - Consistent Order */
-        @media (max-width: 768px) {
-            .section {
-            
-                text-align: center;
-            }
-            .section img {
-                margin-bottom: 10px;
-            }
-            .about, .blog {
-                flex-direction: column-reverse 
-            }
-
-            .project {
-                flex-direction: column
-            }
-            p {
-                text-align: left;
-            }
-        }
-        
-    </style>
-
 </head>
 <body>
-       <!-- Main Section -->
-
-       <div id="main-section" class="container active">
-        <div class="card">
-
-            <h1>Sentry</h1>
-            <img src="assets/images/image03.jpg" alt="Profile" class="profile">
-            <p  class="name" >Hi, I'm Mohammad</p>
-            <p style="display: block; text-align: center;">Computer Engineering Student | IT Professional | Cybersecurity Analyst</p>
+    <!-- Main Section -->
+    <section id="main-section" class="container active">
+        <article class="card">
+            <header>
+                <h1>Sentry</h1>
+                <img src="assets/images/image03.jpg" alt="Profile Picture of Mohammad" class="profile">
+                <p class="name">Hi, I'm Mohammad</p>
+                <p>Computer Engineering Student | IT Professional | Cybersecurity Analyst</p>
+            </header>
             <div class="social-icons">
                 <a href="mailto:mohammadtayeb.v@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
                 <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -287,23 +28,21 @@
                 <div class="txt">
                     <h2>About Me</h2>
                     <p>As a cybersecurity student with a strong IT background, I am passionate about securing digital environments through innovative solutions.</p>
-                    <button class="btn" onclick="showSection('about-more')">More</button>
+                    <button class="btn" data-target="about-more">More</button>
                 </div>
                 <div class="pic">
-                    <img src="assets/images/about.jpg" alt="About Me"> 
+                    <img src="assets/images/about.jpg" alt="About Me" loading="lazy">
                 </div>
-                
             </div>
             <hr>
             <div class="section project">
                 <div class="pic">
-                    <img src="assets/images/projects.jpg" alt="Projects">
+                    <img src="assets/images/projects.jpg" alt="Projects" loading="lazy">
                 </div>
-               
                 <div class="txt">
                     <h2>Projects</h2>
                     <p>Explore my projects where I apply cybersecurity principles to real-world challenges, enhancing digital security and defense mechanisms.</p>
-                    <button class="btn" onclick="showSection('project-more')">More</button>
+                    <button class="btn" data-target="project-more">More</button>
                 </div>
             </div>
             <hr>
@@ -311,117 +50,60 @@
                 <div class="txt">
                     <h2>Blog</h2>
                     <p>Join me as I share insights, tutorials, and experiences in cybersecurity, helping others stay informed and protected in the digital space.</p>
-                    <button class="btn" onclick="showSection('blog-more')">More</button>
+                    <button class="btn" data-target="blog-more">More</button>
                 </div>
-                
                 <div class="pic">
-                    <img src="assets/images/blog.jpg" alt="Blog"> 
+                    <img src="assets/images/blog.jpg" alt="Blog" loading="lazy">
                 </div>
-                  
             </div>
             <hr>
-            <!-- Fotter Section -->
-            <div class="social-icons-bot">
-                <a href="mailto:mohammadtayeb.v@gmail.com" title="Email"><i class="bi bi-envelope-fill "></i></a>
-                <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/" title="LinkedIn"><i class="bi bi-linkedin e" ></i></a>
-                <a href="https://github.com/CyOwl-V" title="GitHub"><i class="bi bi-github "></i></a>
-                <a href="https://www.instagram.com/cyowl.v/" title="Instagram"><i class="bi bi-instagram "></i></a>
-            </div>
-            <p style="display: block; text-align: center;">&copy; 2024 CyOwl. All rights reserved.</p>
-        </div>
-    </div>
+            <!-- Footer -->
+            <footer>
+                <div class="social-icons-bot">
+                    <a href="mailto:mohammadtayeb.v@gmail.com" title="Email"><i class="bi bi-envelope-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammad-tayeb-cyowl/" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/CyOwl-V" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.instagram.com/cyowl.v/" title="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+                <p>&copy; 2024 CyOwl. All rights reserved.</p>
+            </footer>
+        </article>
+    </section>
 
-
-      <!-- Hidden Sections -->
-
-    <div id="about-more" class="hidden-section">
-
+    <!-- Hidden Sections -->
+    <section id="about-more" class="hidden-section">
         <div class="card">
             <div class="hid-sec">
-            <button class="btn btn-back" onclick="showSection('main-section')">Back</button>
-            <h2>About Me</h2>
-            <img src="assets/images/about.jpg" alt="About Me" class="hid-img">
-            <p>Here is some additional information about my background, experience, and journey in cybersecurity.</p>
+                <button class="btn btn-back" data-target="main-section">Back</button>
+                <h2 class="TL">About Me</h2>
+                <img src="assets/images/about.jpg" alt="About Me" class="hid-img" loading="lazy">
+                <p>Here is some additional information about my background, experience, and journey in cybersecurity.</p>
             </div>
-
         </div>
+    </section>
 
-    </div>
-
-
-
-    <div id="project-more" class="hidden-section">
-
-        <div class="card">
-        
-        <div class="hid-sec">
-            
-        
-            <button class="btn btn-back" onclick="showSection('main-section')">Back</button>
-            <h2>Projects</h2>
-            <img src="assets/images/projects.jpg" alt="Projects" class="hid-img">
-            <p>
-                Real-World Solutions to Cybersecurity Challenges Explore my collection 
-                of projects that demonstrate my practical skills and knowledge in cybersecurity. 
-                From ----securing networks to automating threat detection---, each project reflects my dedication 
-                to applying cybersecurity principles in real-world scenarios. These projects cover areas such as
-                ---- penetration testing, SOC operations, vulnerability assessment, and ethical hacking----.
-                Through these hands-on experiences, I aim to contribute to the security of digital
-                systems and continue growing as a cybersecurity professional.
-            </p>
-
-
-        </div>   
-
-        </div>
-
-    </div>
-
-
-
-    <div id="blog-more" class="hidden-section">
-
+    <section id="project-more" class="hidden-section">
         <div class="card">
             <div class="hid-sec">
-            <button class="btn btn-back" onclick="showSection('main-section')">Back</button>
-            <h2>Blog</h2>
-            <img src="assets/images/blog.jpg" alt="Blog" class="hid-img">
-            <p>Read more articles and thoughts on cybersecurity, IT, and technology.</p>
+                <button class="btn btn-back" data-target="main-section">Back</button>
+                <h2 class="TL">Projects</h2>
+                <img src="assets/images/projects.jpg" alt="Projects" class="hid-img" loading="lazy">
+                <p>Real-World Solutions to Cybersecurity Challenges...</p>
             </div>
         </div>
+    </section>
 
-    </div>
+    <section id="blog-more" class="hidden-section">
+        <div class="card">
+            <div class="hid-sec">
+                <button class="btn btn-back" data-target="main-section">Back</button>
+                <h2 class="TL">Blog</h2>
+                <img src="assets/images/blog.jpg" alt="Blog" class="hid-img" loading="lazy">
+                <p>Read more articles and thoughts on cybersecurity, IT, and technology.</p>
+            </div>
+        </div>
+    </section>
 
-
-
-    <script>
-
-        function showSection(id) {
-
-            // Hide all sections
-
-            document.querySelectorAll(".container, .hidden-section").forEach(section => {
-
-                section.classList.remove("active");
-
-            });
-
-
-
-            // Show the selected section
-
-            document.getElementById(id).classList.add("active");
-
-
-
-            // Scroll to top
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        }
-
-    </script>  
-
-
+    <script src="script.js"></script>
 </body>
 </html>
