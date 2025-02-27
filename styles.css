@@ -25,7 +25,7 @@ body {
     text-align: center;
 }
 .container, .hidden-section {
-    display: none; /* Hide all sections initially */
+    display: none; 
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -58,7 +58,7 @@ h1, h2 {
 
 h1 {
     letter-spacing: 8px;
-    font-size: clamp(24px, 5vw, 34px); /* Responsive font size */
+    font-size: clamp(24px, 5vw, 34px); 
     margin-bottom: 10px;
     text-align: center;
 }
@@ -192,9 +192,9 @@ p {
 }
 
 .hid-img {
-    width: 500px; /* Set a fixed width */
-    height: auto; /* Set a fixed height */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    width: 500px; 
+    height: auto; 
+    object-fit: cover; 
     border-radius: 5px; /* Optional: Add rounded corners */
     display: block; /* Ensure the image is treated as a block element */
     margin: 0 auto 20px; /* Center the image and add spacing below */
