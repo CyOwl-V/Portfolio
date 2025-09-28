@@ -71,17 +71,62 @@
     </section>
 
     <!-- Hidden Sections -->
-    <section id="about-more" class="hidden-section">
-        <div class="card">
-            <div class="hid-sec">
-                <button class="btn btn-back" data-target="main-section">Back</button>
-                <h2 class="TL">About Me</h2>
-                <img src="assets/images/about.jpg" alt="About Me" class="hid-img" loading="lazy">
-                <p>Here is some additional information about my background, experience, and journey in cybersecurity.</p>
-            </div>
-        </div>
-    </section>
+    <!-- ===== ABOUT ME SECTION ===== -->
+<section id="about-more" class="hidden-section">
+  <div class="card">
+    <div class="hid-sec">
+      <button class="btn btn-back" data-target="main-section">Back</button>
+      <h2 class="TL"><i class="fas fa-user"></i> About Me</h2>
+      
+      <!-- Image -->
+      <img src="assets/images/about.jpg" alt="About Me" class="hid-img" loading="lazy">
 
+      <!-- Bio -->
+      <p>
+        Hi, I'm <strong>Ehsan</strong> — a passionate cybersecurity student and SOC analyst in training.
+        I enjoy defending networks, analyzing threats, and building hands-on security labs.
+      </p>
+
+      <!-- Skills -->
+      <div class="about-block">
+        <h3><i class="fas fa-code"></i> Skills</h3>
+        <ul class="skills-list">
+          <li><i class="fas fa-shield-alt"></i> Security Operations (SIEM, IDS/IPS, Suricata, Splunk)</li>
+          <li><i class="fas fa-bug"></i> Threat Analysis & Incident Response</li>
+          <li><i class="fas fa-network-wired"></i> Networking (TCP/IP, Firewalls, VPN)</li>
+          <li><i class="fab fa-python"></i> Scripting & Automation (Python, Bash)</li>
+          <li><i class="fab fa-linux"></i> Linux & Windows Administration</li>
+        </ul>
+      </div>
+
+      <!-- Experience -->
+      <div class="about-block">
+        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+        <ul class="timeline">
+          <li>
+            <span class="date"><i class="fas fa-calendar-alt"></i> 2024 – Present</span>
+            <span class="role">Cybersecurity Student</span> @ University
+          </li>
+          <li>
+            <span class="date"><i class="fas fa-calendar-alt"></i> 2024</span>
+            <span class="role">IT Intern</span> @ Museum – Supported IT operations and troubleshooting
+          </li>
+        </ul>
+      </div>
+
+      <!-- Certificates -->
+      <div class="about-block">
+        <h3><i class="fas fa-certificate"></i> Certificates</h3>
+        <ul class="cert-list">
+          <li><i class="fas fa-lock"></i> CompTIA Security+ (In Progress)</li>
+          <li><i class="fas fa-chart-line"></i> Splunk Fundamentals 1</li>
+          <li><i class="fas fa-network-wired"></i> Introduction to Cybersecurity – Cisco</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== PROJECT SECTION ===== -->
     <section id="project-more" class="hidden-section">
         <div class="card">
             <div class="hid-sec">
@@ -92,7 +137,7 @@
             </div>
         </div>
     </section>
-
+<!-- ===== BLOG SECTION ===== -->
     <section id="blog-more" class="hidden-section">
         <div class="card">
             <div class="hid-sec">
@@ -107,3 +152,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
